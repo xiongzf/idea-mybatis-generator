@@ -1,9 +1,10 @@
 # idea-plugin-mybatis-generator
 本插件出自https://github.com/caojx-git/idea-plugin-mybatis-generator
 在原作者的插件基础上增加如下功能
-- 表前缀过滤
-- 添加controller前缀
-感谢 [caojx](https://github.com/caojx-git)
+- **表前缀过滤**
+- **添加controller前缀**
+
+## 感谢 [caojx](https://github.com/caojx-git)
 ## 开发环境
 - JDK 11
 - gradle-7.4.1
