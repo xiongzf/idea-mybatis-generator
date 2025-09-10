@@ -1,0 +1,48 @@
+plugins {
+    id 'org.jetbrains.intellij' version '1.4.0'
+    id 'java'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+group 'com.caojx'
+version '100.3.7'
+
+repositories {
+    maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    implementation 'mysql:mysql-connector-java:5.1.47'
+    implementation 'com.oracle.ojdbc:ojdbc10:19.3.0.0'
+    implementation 'org.freemarker:freemarker:2.3.30'
+    implementation 'com.alibaba.fastjson2:fastjson2:2.0.52'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version = '2021.3.2'
+    plugins = ['java']
+    updateSinceUntilBuild = false
+}
+patchPluginXml {
+    changeNotes = """
+      v1.0<br>
+      <em>在原作者com.caojx的基础上增加了表前缀过滤</em><br>
+      """
+}
+
